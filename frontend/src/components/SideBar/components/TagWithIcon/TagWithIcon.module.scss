@@ -1,0 +1,19 @@
+.tagContainer {
+  display: flex;
+  align-items: center;
+}
+
+.icon {
+  width: 28px;
+  height: 28px;
+  padding: 5px;
+}
+
+.text {
+  padding-top: 2px;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 18px; /* 105.882% */
+  letter-spacing: -0.408px;
+}

@@ -1,0 +1,30 @@
+@import '../../../../scss';
+
+.tag {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  padding: 4px 13px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 19px; /* 135.714% */
+  letter-spacing: -0.408px;
+
+  &:nth-of-type(n) {
+    background: $light-blue-color;
+    color: $blue-color;
+  }
+
+  &:nth-of-type(2n) {
+    background: $grey-color;
+    color: $white-color;
+  }
+
+  &:nth-of-type(3n) {
+    background: $aquamarine-color;
+    color: $white-color;
+  }
+}

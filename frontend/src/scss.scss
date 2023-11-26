@@ -1,0 +1,20 @@
+// colors
+
+$light-blue-color: #D1D6FA;
+$blue-color: #243CE6;
+$grey-color: #BEBFC7;
+$light-grey-color: #D9D9DE;
+$white-color: #fff;
+$aquamarine-color: #37C1DF;
+
+@mixin Marker($color) {
+  position: absolute;
+  content: '';
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: $color;
+}

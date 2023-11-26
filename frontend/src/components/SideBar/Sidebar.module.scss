@@ -1,0 +1,179 @@
+@import '../../scss';
+
+.sidebar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  min-height: 326px;
+  width: 100%;
+  padding: 24px 16px 40px;
+  background: #fff;
+  border-radius: 20px 20px 0 0;
+  overflow-y: scroll;
+
+  display: flex;
+  flex-direction: column;
+
+  box-shadow: 4px 8px 32px 0 rgba(0, 0, 0, 0.12);
+  font-family: 'Gilroy', Arial, sans-serif;
+
+  &:after {
+    position: absolute;
+    content: '';
+    top: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 53px;
+    height: 4px;
+    border-radius: 3px;
+    background: $light-grey-color;
+  }
+}
+
+.titleContainer {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.title {
+  max-width: 290px;
+  font-size: 19px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 22px; /* 115.789% */
+  letter-spacing: -0.408px;
+}
+
+.closeBtn {
+  width: 30px;
+  height: 30px;
+  border-radius: 100px;
+  background: url("../../assets/icons/icon-close.svg") center no-repeat;
+}
+
+.timeContainer {
+  display: flex;
+  gap: 16px;
+  margin-top: 23px;
+}
+
+.datepiker {
+  & input {
+    color: $grey-color;
+  }
+
+  & label {
+    color: $grey-color;
+  }
+
+  & fieldset {
+    border: none;
+    padding: 8px;
+    border-radius: 12px;
+    color: $grey-color;
+    box-shadow: 4px 8px 32px 0 rgba(0, 0, 0, 0.12);
+  }
+}
+
+.parkingHeader {
+  display: flex;
+  justify-content: space-between;
+}
+
+.showMoreBtn {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin: 16px 0 0;
+}
+
+.showMoreBtnIcon {
+  width: 24px;
+  height: 24px;
+  background: url("../../assets/icons/show-more-icon.svg") center no-repeat;
+  transition: transform 0.3s;
+}
+
+.collapsibleContainer {
+  display: grid;
+  grid-template-rows: 0fr;
+  overflow: hidden;
+  transition: grid-template-rows 0.4s, padding 0.4s;
+
+  &_open {
+    grid-template-rows: 1fr;
+  }
+}
+
+.bookingInfoContainer {
+  min-height: 0;
+}
+
+.bookingBtn {
+  margin-top: 30px;
+}
+
+.schemeDescription {
+  position: relative;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 22px; /* 157.143% */
+  letter-spacing: -0.408px;
+  color: $grey-color;
+}
+
+.schemeDescriptContainer {
+  display: flex;
+  gap: 10px;
+
+  & .schemeDescription {
+    padding-left: 16px;
+  }
+
+  & .schemeDescription:nth-of-type(1):before {
+    @include Marker($light-grey-color);
+  }
+
+  & .schemeDescription:nth-of-type(2):before {
+    @include Marker($grey-color);
+  }
+}
+
+.schemeContainer {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  justify-content: space-between;
+  row-gap: 54px;
+  width: 100%;
+  margin: 16px 0 12px;
+  padding: 16px 20px;
+  border-radius: 12px;
+  border: 1px solid $grey-color;
+}
+
+.yourChoose {
+  position: relative;
+  padding-left: 16px;
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 18px; /* 105.882% */
+  letter-spacing: -0.408px;
+
+  &:before {
+    @include Marker($blue-color);
+  }
+}
+
+.parkingInfoContainer {
+  min-height: 0;
+  padding-top: 12px;
+}
+
+.tagsWithIconContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 19px 0 0;
+}

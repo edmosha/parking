@@ -1,0 +1,37 @@
+@import '../../../../scss';
+
+.item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 73px;
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+
+.free {
+  border: 1px solid $grey-color;
+  cursor: pointer;
+}
+
+.notFree {
+  background: $light-grey-color;
+  pointer-events: none;
+}
+
+.input {
+  width: 1px;
+  height: 1px;
+  position: absolute;
+  opacity: 0;
+
+  .item:has(&:checked) {
+    border: 3px solid $blue-color;
+  }
+}
+
+.image {
+  width: 28px;
+  height: 28px;
+}

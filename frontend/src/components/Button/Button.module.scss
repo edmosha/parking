@@ -1,0 +1,23 @@
+@import '../../scss';
+
+.button {
+  width: 100%;
+  height: 48px;
+  padding: 12px 16px;
+  border-radius: 12px;
+  font-family: 'Gilroy', Arial, sans-serif;
+  font-size: 19px;
+  font-weight: 700;
+  align-items: center;
+}
+
+.fill {
+  background: $blue-color;
+  color: $white-color;
+}
+
+.border {
+  background: $white-color;
+  color: $blue-color;
+}
+
