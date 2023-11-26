@@ -23,15 +23,15 @@ const YMap = () => {
   const [activeMenu, setActiveMenu] = useState(false);
   const [ymaps, setYmaps] = useState(React.useRef(null));
 
-  useEffect(() => {
-    fetch('https://localhost:3000/connect').then(res => res.json).then(res => console.log(res))
-  }, []);
+  // useEffect(() => {
+  //   fetch('https://localhost:3000/connect').then(res => res.json).then(res => console.log(res))
+  // }, []);
 
   // const ymaps: any = useYMaps(['Map', 'ObjectManager', 'Placemark', 'templateLayoutFactory']);
 
   // const layout = ymaps.templateLayoutFactory.createClass(
   //   `<div class="pin-container">
-	//   <div class="placemark-description">
+  //   <div class="placemark-description">
   //
   //   </div>`,
   //   {
@@ -51,51 +51,51 @@ const YMap = () => {
 
   return (
     <section>
-        <Map
-          onLoad={ymaps => {
-            // @ts-ignore
-            setYmaps(ymaps);
-            console.log('ymaps', ymaps.geocode);
+      <Map
+        onLoad={ymaps => {
+          // @ts-ignore
+          setYmaps(ymaps);
+          console.log('ymaps', ymaps.geocode);
+        }}
+        state={{
+          center,
+          zoom: 9,
+          // controls: []
+        }}
+        width="100vw"
+        height="100vh"
+        modules={['geoObject.addon.balloon', 'geoObject.addon.hint']}
+      >
+
+        <Clusterer
+          options={{
+            preset: 'islands#invertedDarkBlueClusterIcons',
+            groupByCoordinates: false,
           }}
-          state={{
-            center,
-            zoom: 9,
-            // controls: []
-          }}
-          width="100vw"
-          height="100vh"
-          modules={['geoObject.addon.balloon', 'geoObject.addon.hint']}
         >
-
-          <Clusterer
-            options={{
-              preset: 'islands#invertedDarkBlueClusterIcons',
-              groupByCoordinates: false,
-            }}
-          >
-            {clusterPoints.map((n) => (
-              <Placemark
-                key={Math.floor(Math.random() * 100)}
-                geometry={n.coordinates}
-                options={{
-                  iconLayout: "default#image",
-                  iconImageHref: priceMark.src,
-                  iconImageSize: [50, 20],
-                  openEmptyBalloon: false,
+          {clusterPoints.map((n) => (
+            <Placemark
+              key={Math.floor(Math.random() * 100)}
+              geometry={n.coordinates}
+              options={{
+                iconLayout: 'default#image',
+                iconImageHref: priceMark.src,
+                iconImageSize: [50, 20],
+                openEmptyBalloon: false,
+              }}
+              properties={
+                {
+                  iconContent: 'testtest',
                 }}
-                properties={
-                  {
-                    iconContent: 'testtest',
-                  }}
-                onClick={() => {
-                  setActiveMenu(true);
-                }}
-              />
-            ))}
-          </Clusterer>
-        </Map>
+              onClick={() => {
+                setActiveMenu(true);
+              }}
+            />
+          ))}
+        </Clusterer>
+      </Map>
 
-      {activeMenu && <SideBar onClose={() => setActiveMenu(false)} />}
+      {activeMenu && <SideBar onClose={() => setActiveMenu(false)}/>}
     </section>
   );
 }

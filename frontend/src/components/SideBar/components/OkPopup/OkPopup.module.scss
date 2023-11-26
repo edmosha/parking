@@ -1,0 +1,77 @@
+@import '../../../../scss';
+
+.title {
+  margin: 35px 0 8px;
+  font-size: 19px;
+  font-style: normal;
+  line-height: 22px; /* 115.789% */
+  letter-spacing: -0.408px;
+  color: $blue-color;
+  text-align: center;
+}
+
+.placeText {
+  font-size: 19px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 22px; /* 115.789% */
+  letter-spacing: -0.408px;
+  color: $grey-color;
+  text-align: center;
+}
+
+.timeContainer {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.timeBlock {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1px;
+  width: 100%;
+  padding: 8px;
+  border-radius: 12px;
+  box-shadow: 4px 8px 32px 0 rgba(0, 0, 0, 0.12);
+}
+
+.timeDate {
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 19px; /* 135.714% */
+  letter-spacing: -0.408px;
+  color: $grey-color;
+}
+
+.time {
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 18px; /* 105.882% */
+  letter-spacing: -0.408px;
+  color: $blue-color;
+}
+
+.yourChoose {
+  position: relative;
+  padding-left: 16px;
+  margin: 16px 0 38px;
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 18px; /* 105.882% */
+  letter-spacing: -0.408px;
+
+  &:before {
+    @include Marker($blue-color);
+  }
+}
+
+.payBtn {
+  margin-bottom: 12px;
+}
+

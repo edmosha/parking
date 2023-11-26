@@ -1,0 +1,27 @@
+@import '../../scss';
+
+.auth {
+  display: flex;
+  flex-direction: column;
+  padding: 40px 16px 0;
+  font-family: 'Gilroy', Arial, sans-serif;
+}
+
+.title {
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 22px; /* 100% */
+  letter-spacing: -0.408px;
+  color: $blue-color;
+}
+
+.subtitle {
+  margin: 12px 0 28px;
+  font-size: 19px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 22px; /* 115.789% */
+  letter-spacing: -0.408px;
+  color: $grey-color;
+}
